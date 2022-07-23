@@ -4,11 +4,30 @@ import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
-    <div className="min-h-screen bg-slate-500">
+    <div className="min-h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Job Listing</title>
       </Head>
+
+      <div className="relative w-full h-[9.75rem] bg-desaturatedDarkCyan">
+        <div className="h-full w-full md:hidden">
+          <Image
+            src="/images/bg-header-mobile.svg"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+        <div className="hidden md:block h-full w-full">
+          <Image
+            src="/images/bg-header-desktop.svg"
+            alt=""
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </div>
     </div>
   );
 };
