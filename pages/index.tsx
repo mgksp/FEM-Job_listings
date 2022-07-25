@@ -1,19 +1,15 @@
-import type {
-  GetStaticProps,
-  GetStaticPropsResult,
-  InferGetStaticPropsType,
-  NextPage,
-} from "next";
+import type { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
 import data from "../data/data.json";
+import { iJobData } from "../interfaces";
 
-const Home: NextPage = (
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Home: NextPage<{ jobData: iJobData[] }> = (props: {
+  jobData: iJobData[];
+}) => {
   const { jobData } = props;
-  console.log(jobData);
+
   return (
     <div className="min-h-screen">
       <Head>
@@ -44,7 +40,7 @@ const Home: NextPage = (
 };
 
 export const getStaticProps: GetStaticProps = async (): Promise<
-  GetStaticPropsResult<{}>
+  GetStaticPropsResult<{ jobData: iJobData[] }>
 > => {
   return {
     props: {
