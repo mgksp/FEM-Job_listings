@@ -1,8 +1,19 @@
-import type { NextPage } from "next";
+import type {
+  GetStaticProps,
+  GetStaticPropsResult,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import Head from "next/head";
 import Image from "next/image";
 
-const Home: NextPage = () => {
+import data from "../data/data.json";
+
+const Home: NextPage = (
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
+  const { jobData } = props;
+  console.log(jobData);
   return (
     <div className="min-h-screen">
       <Head>
@@ -30,6 +41,17 @@ const Home: NextPage = () => {
       </div>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async (): Promise<
+  GetStaticPropsResult<{}>
+> => {
+  return {
+    props: {
+      jobData: data,
+    },
+    revalidate: 60,
+  };
 };
 
 export default Home;
