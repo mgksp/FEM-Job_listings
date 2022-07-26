@@ -1,6 +1,7 @@
 import type { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { JobCard } from "../components";
 
 import data from "../data/data.json";
 import { iJobData } from "../interfaces";
@@ -11,7 +12,7 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
   const { jobData } = props;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-lightGrayishCyanBg">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <title>Job Listing</title>
@@ -35,6 +36,14 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
           />
         </div>
       </div>
+
+      <main className="px-6 py-8">
+        <div className="grid gap-4">
+          {jobData.map((job) => (
+            <JobCard key={job.id} jobInfo={job} />
+          ))}
+        </div>
+      </main>
     </div>
   );
 };
