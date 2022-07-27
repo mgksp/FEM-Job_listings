@@ -3,9 +3,10 @@ import { iJobData } from "../interfaces";
 
 interface JobCardProps {
   jobInfo: iJobData;
+  handleAddFilter: Function;
 }
 
-export default function JobCard({ jobInfo }: JobCardProps) {
+export default function JobCard({ jobInfo, handleAddFilter }: JobCardProps) {
   return (
     <div className="">
       <div className="relative h-12 w-12 -mb-6 ml-6 md:hidden">
@@ -72,7 +73,8 @@ export default function JobCard({ jobInfo }: JobCardProps) {
           ].map((tag, idx) => (
             <div
               key={idx}
-              className="px-2 py-1 rounded text-desaturatedDarkCyan bg-lightGrayishCyanBg font-bold text-base"
+              className="px-2 py-1 rounded text-desaturatedDarkCyan bg-lightGrayishCyanTabs font-bold text-base"
+              onClick={() => handleAddFilter(tag)}
             >
               {tag}
             </div>
