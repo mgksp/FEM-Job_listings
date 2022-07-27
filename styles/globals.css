@@ -7,3 +7,7 @@
 body {
   @apply font-leagueSpartan;
 }
+
+.boxShadow {
+  box-shadow: hsla(180, 29%, 50%, 0.1) 0px 10px 20px;
+}

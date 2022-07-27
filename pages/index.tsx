@@ -13,7 +13,6 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
   const { jobData } = props;
 
   const [filters, setFilters] = useState<string[]>([]);
-  console.log(filters);
 
   const filteredJobData = jobData.filter((job) => {
     if (filters.length <= 0) {

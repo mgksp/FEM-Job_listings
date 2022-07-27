@@ -9,7 +9,7 @@ export default function FilterTags({
   removeFilterTag,
 }: FilterTagsProps) {
   return (
-    <div className="rounded bg-white flex items-center justify-between -mt-9 mb-8 p-5 md:px-10 md:mb-10">
+    <div className="rounded bg-white boxShadow flex items-center justify-between -mt-9 mb-8 p-5 md:px-10 md:mb-10">
       <div className="flex items-center flex-wrap gap-4 ">
         {filters.map((tag) => (
           <div
@@ -18,7 +18,7 @@ export default function FilterTags({
           >
             <div className="px-2 py-1 bg-lightGrayishCyanTabs">{tag}</div>
             <button
-              className="bg-desaturatedDarkCyan w-8 grid place-content-center"
+              className="bg-desaturatedDarkCyan w-8 grid place-content-center transition-colors ease-in hover:bg-veryDarkGrayishCyan"
               aria-label="remove button"
               onClick={() => removeFilterTag(tag)}
             >
@@ -28,7 +28,10 @@ export default function FilterTags({
           </div>
         ))}
       </div>
-      <button className="font-bold text-darkGrayishCyan" onClick={clearFilters}>
+      <button
+        className="font-bold text-darkGrayishCyan hover:text-desaturatedDarkCyan hover:underline"
+        onClick={clearFilters}
+      >
         Clear
       </button>
     </div>

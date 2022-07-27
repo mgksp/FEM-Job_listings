@@ -8,7 +8,7 @@ interface JobCardProps {
 
 export default function JobCard({ jobInfo, handleAddFilter }: JobCardProps) {
   return (
-    <div className="">
+    <div>
       <div className="relative h-12 w-12 -mb-6 ml-6 md:hidden">
         <Image
           src={jobInfo.logo.substring(1)}
@@ -19,7 +19,7 @@ export default function JobCard({ jobInfo, handleAddFilter }: JobCardProps) {
       </div>
 
       <div
-        className={`bg-white rounded p-6 pt-9 ${
+        className={`bg-white rounded p-6 pt-9 boxShadow ${
           jobInfo.featured
             ? "border-l-[5px] border-desaturatedDarkCyan pl-[1.1875rem] md:pl-[2.1875rem]"
             : ""
@@ -52,7 +52,7 @@ export default function JobCard({ jobInfo, handleAddFilter }: JobCardProps) {
                 )}
               </div>
             </div>
-            <h2 className="text-15 font-bold text-veryDarkGrayishCyan md:text-[1.375rem]">
+            <h2 className="text-15 font-bold text-veryDarkGrayishCyan md:text-[1.375rem] hover:text-desaturatedDarkCyan cursor-pointer transition-colors ease-in">
               {jobInfo.position}
             </h2>
             <div className="flex items-center gap-2 text-base text-darkGrayishCyan md:text-lg">
@@ -73,7 +73,7 @@ export default function JobCard({ jobInfo, handleAddFilter }: JobCardProps) {
           ].map((tag, idx) => (
             <div
               key={idx}
-              className="px-2 py-1 rounded text-desaturatedDarkCyan bg-lightGrayishCyanTabs font-bold text-base"
+              className="px-2 py-1 rounded text-desaturatedDarkCyan bg-lightGrayishCyanTabs font-bold text-base cursor-pointer hover:bg-desaturatedDarkCyan hover:text-white transition-colors ease-in-out"
               onClick={() => handleAddFilter(tag)}
             >
               {tag}
