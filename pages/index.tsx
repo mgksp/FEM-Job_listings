@@ -2,7 +2,7 @@ import type { GetStaticProps, GetStaticPropsResult, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
-import { FilterTags, JobCard } from "../components";
+import { FilterTags, Footer, JobCard } from "../components";
 
 import data from "../data/data.json";
 import { iJobData } from "../interfaces";
@@ -86,6 +86,8 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
