@@ -37,11 +37,13 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
         </div>
       </div>
 
-      <main className="px-6 py-8">
-        <div className="grid gap-4">
-          {jobData.map((job) => (
-            <JobCard key={job.id} jobInfo={job} />
-          ))}
+      <main className="px-6 py-8 md:px-0 md:py-[4.6875rem]">
+        <div className="max-w-[69.375rem] mx-auto">
+          <div className="grid gap-4">
+            {jobData.map((job) => (
+              <JobCard key={job.id} jobInfo={job} />
+            ))}
+          </div>
         </div>
       </main>
     </div>
