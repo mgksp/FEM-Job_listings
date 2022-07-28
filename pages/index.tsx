@@ -40,7 +40,7 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
         <title>Job Listing</title>
       </Head>
 
-      <div className="relative w-full h-[9.75rem] bg-desaturatedDarkCyan">
+      <header className="relative w-full h-[9.75rem] bg-desaturatedDarkCyan">
         <div className="h-full w-full md:hidden">
           <Image
             src="/images/bg-header-mobile.svg"
@@ -57,7 +57,7 @@ const Home: NextPage<{ jobData: iJobData[] }> = (props: {
             objectFit="cover"
           />
         </div>
-      </div>
+      </header>
 
       <main
         className={`relative z-50 px-6 py-8 md:px-0 md:py-[4.6875rem] ${
